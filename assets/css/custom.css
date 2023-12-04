@@ -1,3 +1,14 @@
+
+.footer {
+	border-top: 6px solid red; /* Linha fina vermelha */
+	background-color: #000000; /* Faixa preta de fundo */
+	color: white; /* Texto em branco */
+	padding-top: 10px; /* Espaçamento superior */
+	margin-left: 0; /* Remove a margem lateral */
+	margin-right: 0; /* Remove a margem lateral */
+}
+
+
 .marquee-container {
     overflow: hidden;
     white-space: nowrap;
