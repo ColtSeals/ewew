@@ -180,6 +180,20 @@
                 </div>
             </div>
         </div>
+	    <footer class="footer mt-auto py-3 bg-dark text-white">
+		<div class="container text-center">
+			<span class="text-muted">Criado pela VDM Equipe Bravo - Inicial 2023 - Atualizado em <span id="anoAtual"></span></span>
+			<p>CB PM Luanque & CB PM Jefferson</p>
+		</div>
+	</footer>
+
+
+		<script>
+			// JavaScript para atualizar o ano atual dinamicamente
+			const anoAtualElement = document.getElementById('anoAtual');
+			const anoAtual = new Date().getFullYear();
+			anoAtualElement.textContent = anoAtual;
+		</script>
 		<script>
 			// Função para obter a temperatura usando a API do OpenWeatherMap
 			async function getTemperature() {
