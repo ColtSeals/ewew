@@ -16,40 +16,57 @@
     <body>
 
         <div class="container">
-            <div class="row mt-5">
+            <div class="row mt-3">
                 <div class="d-flex justify-content-center">
                     <img class="img-fluid" src="assets/img/copom/VDM.png" width="350" alt="copom" />
+
                 </div>
 
                 <div class="col-md-12 mt-3 mx-auto">
-                    <div class="card border-2 shadow" style="height: 73px">
-                        <div class="card-body">
-                            <ul class="nav nav-tabs d-flex justify-content-center">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">EQUIPE A</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">EQUIPE B</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">EQUIPE C</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">EQUIPE D</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">EQUIPE E</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+					<div class="card border-2 shadow" style="height: 70px; text-align: center;">
+						<div class="card-body">
+							<div class="equipe-menu d-flex justify-content-center">
+								<div class="equipe-item" data-equipe="EQUIPE A">EQUIPE A</div>
+								<div class="equipe-item" data-equipe="EQUIPE B">EQUIPE B</div>
+								<div class="equipe-item" data-equipe="EQUIPE C">EQUIPE C</div>
+								<div class="equipe-item" data-equipe="EQUIPE D">EQUIPE D</div>
+								<div class="equipe-item" data-equipe="EQUIPE E">EQUIPE E</div>
+							</div>
+						</div>
+					</div>
 
-                    <div class="card border-2 mt-2 shadow" style="background-image: url('assets/img/card/background.jpg'); background-size: 1500px;">
+					<!-- Seu script JavaScript permanece inalterado -->
+
+					<style>
+						.equipe-menu {
+							font-size: 20px; /* Ajuste a fonte conforme necessário */
+						}
+
+						.equipe-item {
+							cursor: pointer;
+							margin: 0 10px; /* Espaçamento entre os itens */
+							padding: 5px 10px;
+							border-radius: 5px;
+						}
+
+						.equipe-item.active {
+							background-color: #007bff; /* Cor de fundo para o item ativo */
+							color: #fff; /* Cor do texto para o item ativo */
+						}
+					</style>
+
+
+					<div class="card border-2 mt-2 shadow" style="background-image: url('assets/img/card/background.jpg'); background-size: 1500px;">
                         <div class="card-body">
 
                             <div class="row text-center">
 								<div class="col-md-4 mb-3 mt-4">
-									<img src="https://th.seaicons.com/wp-content/uploads/2015/06/calendar-clock-icon.png" width="255px" alt="Imagem 1" class="img-fluid rounded">
+									<div class="clock">
+										<img src="assets/img/hora/hora.png">
+										<div class="hour hand" id="hour"></div>
+										<div class="minute hand" id="minute"></div>
+										<div class="seconds hand" id="seconds"></div>
+									</div>
 									<h3 class="mt-2">
 										<span id="dataAtual" class="badge bg-secondary">
 											<!-- Data será inserida aqui via JavaScript -->
@@ -62,18 +79,89 @@
 									</h1>
 
 								</div>
+									<style>
 
+										.clock{
+											height: 320px;
+											width: 320px;
+											background-color: rgba(255, 255, 255, 0);
+											-webkit-backdrop-filter: blur(20px);
+											backdrop-filter: blur(20px);
+											border-radius: 50%;
+											margin: auto;
+											top: 0;
+											bottom: 0;
+											left: 0;
+											right: 0;
+											box-shadow: 30px 30px 35px rgba(0, 0, 0, 0.123);
+											border: 2px solid rgba(255, 255, 255, 0.096);
+										}
+										.hand{
+											position: absolute;
+											margin: auto;
+											left: 0;
+											right: 0;
+											background-color: rgb(255, 255, 255);
+											-webkit-backdrop-filter: blur(20px);
+											backdrop-filter: blur(20px);
+											border-radius: 5px;
+											transform-origin: bottom;
+										}
+										.hour{
+											height: 60px;
+											width: 10px;
+											top: 100px;
+										}
+										.minute{
+											height: 80px;
+											width: 5px;
+											top: 80px;
+										}
+										.seconds{
+											height: 90px;
+											width: 3px;
+											top: 70px;
+										}
+
+										a{
+											color: #ffffff;
+											font-family: "Poppins",sans-serif;
+											font-weight: 500;
+											position:absolute;
+											right:20px ;
+											top:20px;
+											border:3px solid #ffffff;
+											border-radius: 5px;
+											text-decoration:none;
+										}
+										a>.fa{
+											color: #FF0000;
+										}
+										@media screen and (min-width: 451px) {
+											a{
+												font-size: 18px;
+												padding:8px 12px 8px 12px;
+											}
+										}
+
+										@media screen and (max-width: 450px) {
+											a{
+												font-size: 12px;
+												padding:5px 8px 5px 8px;
+											}
+										}
+									</style>
 								<div class="col-md-4">
                                     <img src="assets/img/copom/copom.png" width="380" alt="Imagem 3" class="img-fluid rounded">
                                 </div>
-                                <div class="col-md-4 mb-3 mt-4">
-                                    <img src="https://cdn2.iconfinder.com/data/icons/basic-icons-5/64/WEATHER-512.png" width="255px" alt="Imagem 2" class="img-fluid rounded">
+								<div class="col-md-4 mb-3 mt-4">
+									<img src="https://cdn2.iconfinder.com/data/icons/basic-icons-5/64/WEATHER-512.png" width="255px" alt="Imagem 2" class="img-fluid rounded">
 									<h1 class="mt-4">
 										<span class="badge bg-danger" id="temperatureBadge">
 											<!-- A temperatura será exibida aqui -->
 										</span>
 									</h1>
-                                </div>
+								</div>
                             </div>
 
 
@@ -87,43 +175,43 @@
 											</div>
 
 											<div class="marquee-item">
-													<h2>810 MIL</h6>
-													<h4>Atendimentos 190 e 193</h6>
+													<h2>810 MIL</h2>
+													<h4>Atendimentos 190 e 193</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-land-mine-on fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>282 MIL</h6>
-													<h4>Ocorrências Cadastradas</h6>
+													<h2>282 MIL</h2>
+													<h4>Ocorrências Cadastradas</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-person-circle-question fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>81 MIL</h6>
-													<h4>Orientações ao Público</h6>
+													<h2>81 MIL</h2>
+													<h4>Orientações ao Público</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-venus fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>56 SOS</h6>
-													<h4>Acionamentos Via APP</h6>
+													<h2>56 SOS</h2>
+													<h4>Acionamentos Via APP</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-handcuffs fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>222</h6>
-													<h4>Recapturados</h6>
+													<h2>222</h2>
+													<h4>Recapturados</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-person-breastfeeding fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>18</h6>
-													<h4>Densegasgamentos</h6>
+													<h2>18</h2>
+													<h4>Densegasgamentos</h4>
 												</div>
 											</span>
 											<span>
@@ -131,44 +219,44 @@
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-phone-volume fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>810 MIL</h6>
-													<h4>Atendimentos 190 e 193</h6>
+													<h2>810 MIL</h2>
+													<h4>Atendimentos 190 e 193</h4>
 												</div>
 
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-land-mine-on fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>282 MIL</h6>
-													<h4>Ocorrências Cadastradas</h6>
+													<h2>282 MIL</h2>
+													<h4>Ocorrências Cadastradas</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-person-circle-question fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>81 MIL</h6>
-													<h4>Orientações ao Público</h6>
+													<h2>81 MIL</h2>
+													<h4>Orientações ao Público</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-venus fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>56 SOS</h6>
-													<h4>Acionamentos Via APP</h6>
+													<h2>56 SOS</h2>
+													<h4>Acionamentos Via APP</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-handcuffs fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>222</h6>
-													<h4>Recapturados</h6>
+													<h2>222</h2>
+													<h4>Recapturados</h4>
 												</div>
 												<div class="marquee-item-icon">
 													<p class="text-white" style="margin-top: 10px;"><i class="fa-solid fa-person-breastfeeding fa-2xl"></i></p>
 												</div>
 												<div class="marquee-item">
-													<h2>18</h6>
-													<h4>Densegasgamentos</h6>
+													<h2>18</h2>
+													<h4>Densegasgamentos</h4>
 												</div>
 											</span>
 										</div>
@@ -181,20 +269,43 @@
                 </div>
             </div>
         </div>
-	    <footer class="footer mt-auto py-3 bg-dark text-white">
-		<div class="container text-center">
-			<span class="text-muted">Criado pela VDM Equipe Bravo - Inicial 2023 - Atualizado em <span id="anoAtual"></span></span>
-			<p>CB PM Luanque & CB PM Jefferson</p>
-		</div>
-	</footer>
-
-
+		<footer class="footer mt-auto py-3 bg-dark text-white">
+			<div class="container text-center">
+				<span class="text-muted">Criado pela VDM Equipe Bravo - Inicial 2023 - Atualizado em <span id="anoAtual"></span></span>
+				<p>CB PM Luanque & CB PM Jefferson</p>
+			</div>
+		</footer>
 		<script>
 			// JavaScript para atualizar o ano atual dinamicamente
 			const anoAtualElement = document.getElementById('anoAtual');
 			const anoAtual = new Date().getFullYear();
 			anoAtualElement.textContent = anoAtual;
 		</script>
+
+		<script>
+				var hour = document.getElementById("hour");
+				var minute = document.getElementById("minute");
+				var seconds = document.getElementById("seconds");
+
+				var set_clock = setInterval(
+				function clock(){
+				var date_now = new Date();
+				var hr = date_now.getHours();
+				var min = date_now.getMinutes();
+				var sec = date_now.getSeconds();
+
+				var calc_hr = (hr * 30) + (min / 2);
+				var calc_min =    (min * 6)  ;
+				var calc_sec = sec * 6 ;
+
+				hour.style.transform = "rotate(" + calc_hr + "deg)";
+				minute.style.transform = "rotate(" + calc_min + "deg)";
+				seconds.style.transform = "rotate(" + calc_sec + "deg)";
+				}, 1000);
+		</script>
+
+
+
 		<script>
 			// Função para obter a temperatura usando a API do OpenWeatherMap
 			async function getTemperature() {
@@ -252,7 +363,6 @@
 		</script>
 		<script>
 			$(document).ready(function () {
-				// Mapeia cada link de equipe para a imagem correspondente
 				var equipeImagens = {
 					'EQUIPE A': 'assets/img/logos/alpha.png',
 					'EQUIPE B': 'assets/img/logos/bravo.png',
@@ -261,10 +371,15 @@
 					'EQUIPE E': 'assets/img/logos/echo.png'
 				};
 
-				// Adiciona um manipulador de evento de clique para as abas
-				$('.nav-link').click(function () {
-					// Obtém o texto da aba clicada
-					var equipe = $(this).text();
+				$('.equipe-item').click(function () {
+					// Remove a classe 'active' de todos os itens
+					$('.equipe-item').removeClass('active');
+
+					// Adiciona a classe 'active' ao item clicado
+					$(this).addClass('active');
+
+					// Obtém a equipe associada ao item clicado
+					var equipe = $(this).data('equipe');
 
 					// Obtém a imagem correspondente ao texto da equipe
 					var novaImagem = equipeImagens[equipe];
